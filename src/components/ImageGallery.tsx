@@ -55,8 +55,7 @@ const styles = StyleSheet.create({
     marginBottom: 10,
   },
   firstImage: {
-    width: "65%",
-    aspectRatio: 1,
+    width: "100%",
   },
 });
 

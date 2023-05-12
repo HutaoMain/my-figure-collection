@@ -19,8 +19,8 @@ const TabNavigator = () => {
   return (
     <Tab.Navigator>
       <Tab.Screen name="Home" component={HomePage} />
-      <Tab.Screen name="Login" component={LoginPage} />
       <Tab.Screen name="Collections" component={CollectionPage} />
+      <Tab.Screen name="Login" component={LoginPage} />
     </Tab.Navigator>
   );
 };
