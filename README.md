@@ -1,1 +1,1 @@
-# my-figure-collection
+# my-figure-collection-react-native
