@@ -1,9 +1,10 @@
-import { SafeAreaView, Text } from "react-native";
+import { SafeAreaView } from "react-native";
+import ImageGallery from "../components/ImageGallery";
 
 const HomePage = () => {
   return (
     <SafeAreaView>
-      <Text>Homepage</Text>
+      <ImageGallery />
     </SafeAreaView>
   );
 };
