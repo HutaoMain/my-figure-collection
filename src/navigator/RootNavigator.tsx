@@ -7,9 +7,20 @@ const Stack = createNativeStackNavigator();
 const RootNavigator = () => {
   return (
     <Stack.Navigator>
-      <Stack.Group>
-        <Stack.Screen name="Main" component={TabNavigator} />
-      </Stack.Group>
+      <Stack.Screen
+        name="Main"
+        component={TabNavigator}
+        options={{
+          headerShown: false,
+        }}
+      />
+      <Stack.Screen
+        name="Home"
+        component={TabNavigator}
+        options={{
+          headerShown: false,
+        }}
+      />
     </Stack.Navigator>
   );
 };
