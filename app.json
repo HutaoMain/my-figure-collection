@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "my-figure-collection",
-    "slug": "my-figure-collection",
+    "name": "my-figure-collection-react-native",
+    "slug": "my-figure-collection-react-native",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",

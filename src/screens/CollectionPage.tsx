@@ -55,12 +55,8 @@ const CollectionPage = () => {
     <SafeAreaView>
       <View style={style.collectionPageContainer}>
         {figures.map((figure) => (
-          <Pressable onPress={() => handleFigurePress(figure)}>
-            <Image
-              source={{ uri: figure.image }}
-              style={style.figureImage}
-              key={figure.id}
-            />
+          <Pressable onPress={() => handleFigurePress(figure)} key={figure.id}>
+            <Image source={{ uri: figure.image }} style={style.figureImage} />
           </Pressable>
         ))}
       </View>
