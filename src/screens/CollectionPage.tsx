@@ -5,6 +5,7 @@ import {
   View,
   Pressable,
   Modal,
+  TextInput,
 } from "react-native";
 import { useState } from "react";
 import { figureInterface } from "../types/Types";
@@ -41,6 +42,7 @@ const CollectionPage = () => {
     figureInterface | undefined
   >();
   const [modalVisible, setModalVisible] = useState<boolean>(false);
+  const [searchText, setSearchText] = useState<string>("");
 
   const handleFigurePress = (figure: figureInterface) => {
     setSelectedFigure(figure);
@@ -51,12 +53,24 @@ const CollectionPage = () => {
     setModalVisible(false);
   };
 
+  const filteredFigures = figures.filter((figure) =>
+    figure.name.toLowerCase().includes(searchText.toLowerCase())
+  );
+
   return (
-    <SafeAreaView>
-      <View style={style.collectionPageContainer}>
-        {figures.map((figure) => (
+    <SafeAreaView style={styles.container}>
+      <View style={styles.searchContainer}>
+        <TextInput
+          style={styles.searchInput}
+          placeholder="Search by name"
+          value={searchText}
+          onChangeText={setSearchText}
+        />
+      </View>
+      <View style={styles.collectionPageContainer}>
+        {filteredFigures.map((figure) => (
           <Pressable onPress={() => handleFigurePress(figure)} key={figure.id}>
-            <Image source={{ uri: figure.image }} style={style.figureImage} />
+            <Image source={{ uri: figure.image }} style={styles.figureImage} />
           </Pressable>
         ))}
       </View>
@@ -69,7 +83,21 @@ const CollectionPage = () => {
   );
 };
 
-const style = StyleSheet.create({
+const styles = StyleSheet.create({
+  container: {
+    backgroundColor: "#070707",
+    height: "100%",
+  },
+  searchContainer: {
+    padding: 20,
+    marginTop: 20,
+  },
+  searchInput: {
+    backgroundColor: "#ffffff",
+    borderRadius: 10,
+    padding: 10,
+    paddingHorizontal: 10,
+  },
   collectionPageContainer: {
     display: "flex",
     alignItems: "center",
@@ -79,9 +107,11 @@ const style = StyleSheet.create({
   figureImage: {
     width: 100,
     height: 100,
+    resizeMode: "cover",
     marginHorizontal: 10,
     borderWidth: 2,
-    borderColor: "green",
+    borderColor: "#ffff",
+    aspectRatio: 1, // Maintain the aspect ratio of the image
   },
 });
 

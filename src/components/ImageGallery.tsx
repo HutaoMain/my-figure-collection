@@ -42,6 +42,7 @@ const styles = StyleSheet.create({
     fontSize: 20,
     fontWeight: "bold",
     marginBottom: 10,
+    color: "#ffff",
   },
   gallery: {
     flexDirection: "row",
@@ -53,6 +54,9 @@ const styles = StyleSheet.create({
     height: "32%",
     aspectRatio: 1,
     marginBottom: 10,
+    resizeMode: "contain",
+    borderColor: "#ffff",
+    borderWidth: 2,
   },
   firstImage: {
     width: "100%",
