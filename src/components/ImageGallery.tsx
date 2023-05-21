@@ -2,17 +2,17 @@ import { StyleSheet, View, Image, Text } from "react-native";
 import React from "react";
 
 const images = [
-  "https://images.unsplash.com/photo-1604537529428-15bcbeecfe4d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1469&q=80",
-  "https://images.unsplash.com/photo-1679679195912-29d0190805ad?ixlib=rb-4.0.3&ixid=MnwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=735&q=80",
-  "https://images.unsplash.com/photo-1679678691006-3afa56204979?ixlib=rb-4.0.3&ixid=MnwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1469&q=80",
-  "https://images.unsplash.com/photo-1497250681960-ef046c08a56e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80",
-  "https://images.unsplash.com/photo-1513366208864-87536b8bd7b4?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80",
-  "https://plus.unsplash.com/premium_photo-1682109363052-4778e053cde0?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1632&q=80",
-  "https://images.unsplash.com/photo-1545147986-a9d6f2ab03b5?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=688&q=80",
-  "https://images.unsplash.com/photo-1560015534-cee980ba7e13?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=735&q=80",
-  "https://images.unsplash.com/photo-1525498128493-380d1990a112?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=735&q=80",
-  "https://images.unsplash.com/photo-1515339760107-1952b7a08454?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1469&q=80",
-  "https://images.unsplash.com/photo-1501261379837-c3b516327829?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=736&q=80",
+  "https://images.unsplash.com/photo-1578632767115-351597cf2477?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80",
+  "https://images.unsplash.com/photo-1660292785457-ef25cffef35c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80",
+  "https://images.unsplash.com/photo-1632506823413-200b3d091e90?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=700&q=80",
+  "https://images.unsplash.com/photo-1670834186771-c62ce681c65b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80",
+  "https://i.pinimg.com/736x/1b/73/f1/1b73f15b9e5bc9cdec3d83bc9da9d238--landscapes-photography.jpg",
+  "https://d3ieicw58ybon5.cloudfront.net/ex/610.407/u/7514dc633e544d1dafdec87c9ca1d411.jpg",
+  "https://i.pinimg.com/736x/84/f8/61/84f861b2dd7de75bcb1249267beedb0f--anime-figures-gates.jpg",
+  "https://ae01.alicdn.com/kf/S65f9ed340adf4642a772230f3506650fU.jpg?width=805&height=805&hash=1610",
+  "https://ae01.alicdn.com/kf/S8b834751faeb41f7a52a787f7d3953424/22cm-Genshin-Impact-Klee-Hibana-Knight-Anime-Figure-Kamisato-Ayaka-PVC-Action-Figure-Collection-Model-Doll.jpg_640x640.jpg",
+  "https://preview.redd.it/7w5a28qxrdf71.jpg?width=640&crop=smart&auto=webp&s=bbae513015bb4e8acbe0532cbb3e2213d0313a3d",
+  "https://resize.cdn.otakumode.com/ex/680.680/u/99202420e90c4bf8b1004a03dc255f03.jpg",
 ];
 
 const ImageGallery = () => {

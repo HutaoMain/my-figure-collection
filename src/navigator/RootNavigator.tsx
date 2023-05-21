@@ -1,16 +1,18 @@
 import React from "react";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import useAuthStore from "../zustand/AuthStore";
-import TabNavigator from "./TabNavigator";
 import HomePage from "../screens/HomePage";
 import LoginPage from "../screens/LoginPage";
 import CollectionPage from "../screens/CollectionPage";
 import BottomTab from "../components/BottomTab";
+import { useNavigation } from "@react-navigation/native";
 
 const Stack = createNativeStackNavigator();
 
 const RootNavigator = () => {
   const user = useAuthStore((state) => state.user);
+
+  const navigation = useNavigation();
 
   return (
     <>
@@ -28,7 +30,7 @@ const RootNavigator = () => {
               options={{ headerShown: false }}
             />
           </Stack.Navigator>
-          <BottomTab />
+          <BottomTab navigation={navigation} />
         </>
       ) : (
         <Stack.Navigator>

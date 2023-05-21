@@ -1,13 +1,17 @@
-import { StyleSheet, View } from "react-native";
+import { Pressable, StyleSheet, View } from "react-native";
 import React from "react";
 import Ionicons from "@expo/vector-icons/Ionicons";
 
-const BottomTab = () => {
+const BottomTab = ({ navigation }: any) => {
   return (
     <View style={styles.bottomTab}>
       <View style={styles.container}>
-        <Ionicons name="home" size={30} color="#FFFFFF" />
-        <Ionicons name="albums" size={30} color="#FFFFFF" />
+        <Pressable onPress={() => navigation.navigate("Home")}>
+          <Ionicons name="home" size={30} color="#FFFFFF" />
+        </Pressable>
+        <Pressable onPress={() => navigation.navigate("Collection")}>
+          <Ionicons name="albums" size={30} color="#FFFFFF" />
+        </Pressable>
         <Ionicons name="add-circle" size={30} color="#FFFFFF" />
         <Ionicons name="person" size={30} color="#FFFFFF" />
       </View>
