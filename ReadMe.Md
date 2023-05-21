@@ -6,3 +6,7 @@ starting from scratch
    "@react-navigation/native": "^6.1.6",
    "@react-navigation/native-stack": "^6.9.12",
    npx expo install react-native-screens react-native-safe-area-context
+
+   HOW TO INSTALL REACT NAVIGATION
+   npm install @react-navigation/native
+   npm install @react-navigation/native-stack

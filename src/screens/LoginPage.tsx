@@ -1,4 +1,11 @@
-import { View, Text, TextInput, StyleSheet, Pressable } from "react-native";
+import {
+  SafeAreaView,
+  View,
+  Text,
+  TextInput,
+  StyleSheet,
+  Pressable,
+} from "react-native";
 import { useState } from "react";
 import { firebaseAuthentication } from "../firebase/index";
 import {
@@ -29,7 +36,7 @@ const LoginPage = ({ navigation }: any) => {
   };
 
   return (
-    <View style={styles.container}>
+    <SafeAreaView style={styles.container}>
       <View style={styles.textHeaderContainer}>
         <Text style={styles.biggerTextHeader}>Let's sign you in.</Text>
         <Text style={styles.smallerTextHeader}>
@@ -58,7 +65,7 @@ const LoginPage = ({ navigation }: any) => {
           <Text style={styles.btnTitle}>Login</Text>
         </Pressable>
       </View>
-    </View>
+    </SafeAreaView>
   );
 };
 
@@ -67,7 +74,7 @@ const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "space-evenly",
     flex: 1,
-    backgroundColor: "#25242D",
+    backgroundColor: "#070707",
   },
   inputContainer: {
     width: "75%",
