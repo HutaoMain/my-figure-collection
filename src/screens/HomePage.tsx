@@ -14,5 +14,6 @@ export default HomePage;
 const styles = StyleSheet.create({
   container: {
     backgroundColor: "#070707",
+    height: "100%",
   },
 });

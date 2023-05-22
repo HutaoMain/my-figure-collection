@@ -1,7 +1,7 @@
 export interface figureInterface {
   id: number;
   name: string;
-  image: string;
+  image: string[];
   series: string;
   manufacturer: string;
   releaseDate: string;

@@ -1,13 +1,6 @@
 // FigurePage.tsx
 import React from "react";
-import {
-  SafeAreaView,
-  StyleSheet,
-  Text,
-  Image,
-  View,
-  Pressable,
-} from "react-native";
+import { StyleSheet, Text, Image, View, Pressable } from "react-native";
 import { figureInterface } from "../types/Types";
 import Ionicons from "@expo/vector-icons/Ionicons";
 
@@ -16,35 +9,23 @@ interface figurePageInterface {
   closeModal: () => void;
 }
 
-const FigurePage = ({ figure, closeModal }: figurePageInterface) => {
-  return (
-    <SafeAreaView style={styles.container}>
-      <Pressable onPress={closeModal} style={styles.closeBtn}>
-        <Ionicons name="close-outline" size={30} color="#FFFFFF" />
-      </Pressable>
-      <View style={styles.figurePageContainer}>
-        <Image source={{ uri: figure.image }} style={styles.figureImage} />
-        <View style={styles.figureDetailsContainer}>
-          <Text style={styles.figureName}>{figure.name}</Text>
-          <Text style={styles.figureSeries}>Series: {figure.series}</Text>
-          <Text style={styles.figureManufacturer}>
-            Manufacturer: {figure.manufacturer}
-          </Text>
-          <Text style={styles.figureReleaseDate}>
-            Release Date: {figure.releaseDate}
-          </Text>
-          <Text style={styles.figurePrice}>Price: {figure.price}</Text>
-          <Text style={styles.figureDescription}>{figure.description}</Text>
-        </View>
-      </View>
-    </SafeAreaView>
-  );
-};
-
 const styles = StyleSheet.create({
   container: {
     backgroundColor: "#131313",
     height: "100%",
+  },
+  firstImage: {
+    width: "100%",
+    flex: 0.9,
+    resizeMode: "cover",
+    position: "relative",
+  },
+  otherImages: {
+    width: 100,
+    height: 100,
+    position: "absolute",
+    bottom: 0,
+    alignItems: "center",
   },
   closeBtn: {
     backgroundColor: "transparent",
@@ -58,52 +39,96 @@ const styles = StyleSheet.create({
   },
   figurePageContainer: {
     display: "flex",
-    alignItems: "center",
     padding: 20,
-    marginTop: 50,
   },
-  figureImage: {
-    width: 300,
-    height: 300,
-    resizeMode: "contain",
-  },
-  figureDetailsContainer: {
-    marginTop: 20,
-    alignItems: "center",
+  basicInfo: {
+    borderRadius: 10,
+    backgroundColor: "#959DB0",
+    paddingHorizontal: 20,
+    paddingVertical: 15,
+    marginBottom: 10,
   },
   figureName: {
     fontSize: 24,
     fontWeight: "bold",
-    marginBottom: 10,
     color: "#ffff",
   },
+  figureDescription: {
+    fontSize: 16,
+    color: "#ffff",
+  },
+  otherInfo: {
+    backgroundColor: "#959DB0",
+    borderRadius: 10,
+    paddingHorizontal: 20,
+    paddingVertical: 10,
+    marginBottom: 10,
+    flexDirection: "row",
+    gap: 5,
+    alignItems: "center",
+  },
   figureSeries: {
-    fontSize: 18,
+    fontSize: 16,
     fontStyle: "italic",
     marginBottom: 5,
     color: "#ffff",
   },
   figureManufacturer: {
-    fontSize: 18,
+    fontSize: 16,
     marginBottom: 5,
     color: "#ffff",
   },
   figureReleaseDate: {
-    fontSize: 18,
+    fontSize: 16,
     marginBottom: 5,
     color: "#ffff",
   },
   figurePrice: {
-    fontSize: 18,
+    fontSize: 16,
     marginBottom: 5,
     color: "#ffff",
   },
-  figureDescription: {
-    fontSize: 16,
-    marginTop: 10,
-    textAlign: "center",
-    color: "#ffff",
-  },
 });
+
+const FigurePage = ({ figure, closeModal }: figurePageInterface) => {
+  return (
+    <View style={styles.container}>
+      {figure.image.map((imageUrl, index) => (
+        <Image
+          key={index}
+          source={{ uri: imageUrl }}
+          style={[styles.otherImages, index === 0 ? styles.firstImage : null]}
+        />
+      ))}
+      <Pressable onPress={closeModal} style={styles.closeBtn}>
+        <Ionicons name="arrow-back-outline" size={30} color="#FFFFFF" />
+      </Pressable>
+
+      <View style={styles.figurePageContainer}>
+        <View style={styles.basicInfo}>
+          <Text style={styles.figureName}>{figure.name}</Text>
+          <Text style={styles.figureDescription}>{figure.description}</Text>
+        </View>
+
+        <View style={styles.otherInfo}>
+          <Text style={{ fontSize: 12, color: "#ffffff" }}>Series:</Text>
+          <Text style={styles.figureSeries}>{figure.series}</Text>
+        </View>
+        <View style={styles.otherInfo}>
+          <Text style={{ fontSize: 12, color: "#ffffff" }}>Manufacturer:</Text>
+          <Text style={styles.figureManufacturer}>{figure.manufacturer}</Text>
+        </View>
+        <View style={styles.otherInfo}>
+          <Text style={{ fontSize: 12, color: "#ffffff" }}>Release Date:</Text>
+          <Text style={styles.figureReleaseDate}>{figure.releaseDate}</Text>
+        </View>
+        <View style={styles.otherInfo}>
+          <Text style={{ fontSize: 12, color: "#ffffff" }}>Price: </Text>
+          <Text style={styles.figurePrice}> {figure.price}</Text>
+        </View>
+      </View>
+    </View>
+  );
+};
 
 export default FigurePage;

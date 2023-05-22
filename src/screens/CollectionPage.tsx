@@ -15,8 +15,13 @@ const figures = [
   {
     id: 1,
     name: "Miku Hatsune",
-    image:
+    image: [
       "https://images.goodsmile.info/cgm/images/product/20091023/272/12917/large/ef17d50120ca5f620d2452760230377a.jpg",
+      "https://images.goodsmile.info/cgm/images/product/20091023/272/12919/large/07e415e0a24b802a295fa62ac59070ab.jpg",
+      "https://images.goodsmile.info/cgm/images/product/20091023/272/12920/large/7162c6ac9697749ab16994af73fcd630.jpg",
+      "https://images.goodsmile.info/cgm/images/product/20091023/272/12921/large/db125a04a92bc4bd90a8a35dfd5f63d4.jpg",
+      "https://images.goodsmile.info/cgm/images/product/20091023/272/12922/large/f42dd2bbf07036144a2513ff953f68d1.jpg",
+    ],
     series: "Vocaloid",
     manufacturer: "Good Smile Company",
     releaseDate: "2021-01-01",
@@ -26,8 +31,14 @@ const figures = [
   {
     id: 2,
     name: "Saber",
-    image:
+    image: [
       "https://www.animefolio.com/wp-content/uploads/2020/03/saber-alter-rider-figure-amakuni-5.jpg?x33681",
+      "https://www.animefolio.com/wp-content/uploads/2020/03/saber-alter-rider-figure-amakuni-3.jpg",
+      "https://www.animefolio.com/wp-content/uploads/2020/03/saber-alter-rider-figure-amakuni-4.jpg",
+      "https://www.animefolio.com/wp-content/uploads/2020/03/saber-alter-rider-figure-amakuni-5.jpg",
+      "https://www.animefolio.com/wp-content/uploads/2020/03/saber-alter-rider-figure-amakuni-6.jpg",
+    ],
+
     series: "Fate/stay night",
     manufacturer: "Alter",
     releaseDate: "2021-02-01",
@@ -68,9 +79,13 @@ const CollectionPage = () => {
         />
       </View>
       <View style={styles.collectionPageContainer}>
-        {filteredFigures.map((figure) => (
+        {filteredFigures.map((figure: figureInterface) => (
           <Pressable onPress={() => handleFigurePress(figure)} key={figure.id}>
-            <Image source={{ uri: figure.image }} style={styles.figureImage} />
+            <Image
+              key={figure.id}
+              source={{ uri: figure.image[0] }}
+              style={styles.figureImage}
+            />
           </Pressable>
         ))}
       </View>

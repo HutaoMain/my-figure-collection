@@ -7,13 +7,18 @@ const BottomTab = ({ navigation }: any) => {
     <View style={styles.bottomTab}>
       <View style={styles.container}>
         <Pressable onPress={() => navigation.navigate("Home")}>
-          <Ionicons name="home" size={30} color="#FFFFFF" />
+          <Ionicons name="home-outline" size={30} color="#FFFFFF" />
         </Pressable>
         <Pressable onPress={() => navigation.navigate("Collection")}>
-          <Ionicons name="albums" size={30} color="#FFFFFF" />
+          <Ionicons name="compass-outline" size={30} color="#FFFFFF" />
         </Pressable>
-        <Ionicons name="add-circle" size={30} color="#FFFFFF" />
-        <Ionicons name="person" size={30} color="#FFFFFF" />
+        <Ionicons name="add-outline" size={30} color="#FFFFFF" />
+        <Ionicons
+          name="chatbubble-ellipses-outline"
+          size={30}
+          color="#FFFFFF"
+        />
+        <Ionicons name="notifications-outline" size={30} color="#FFFFFF" />
       </View>
     </View>
   );

@@ -1,10 +1,11 @@
-import React from "react";
-import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import useAuthStore from "../zustand/AuthStore";
 import HomePage from "../screens/HomePage";
 import LoginPage from "../screens/LoginPage";
 import CollectionPage from "../screens/CollectionPage";
 import BottomTab from "../components/BottomTab";
+import Navbar from "../components/Navbar";
+
+import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { useNavigation } from "@react-navigation/native";
 
 const Stack = createNativeStackNavigator();
@@ -18,6 +19,7 @@ const RootNavigator = () => {
     <>
       {user ? (
         <>
+          <Navbar />
           <Stack.Navigator>
             <Stack.Screen
               name="Home"
